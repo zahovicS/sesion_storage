@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,36 @@
     <title>example-session_storage</title>
 </head>
 <body>
-    
+    <h1>example session_storage</h1>
+    <form action="pross.html" id="log" method="post">
+        <div><input type="text" id="userx" required placeholder="usuario"></div>
+        <div></div><input type="password" id="passx" required placeholder="contraseña"></div>
+        <div><button type="submit" id="enviar">enviar</button></div>
+    </form>
+<script>
+    var d = document;
+    function crearsesion(e)
+    {
+        e.preventDefault();
+        let user = d.querySelector("#userx").value,
+        pass = d.querySelector("#passx").value;
+        console.log(user,pass);
+        if(user == "zahovic" && pass == "123")
+        {
+            sessionStorage.setItem("nombre",user);
+            window.location.href = "pross.html";
+        }else
+        {
+            alert("datos incorrectos");
+            e.target.reset();
+        }
+    }
+    function iniciarsesion()
+    {
+        var login = d.querySelector("#log");
+        login.onsubmit =  crearsesion;
+    }
+    window.onload = iniciarsesion;
+</script>
 </body>
 </html>

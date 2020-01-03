@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>docuemnto con session storage</title>
+</head>
+<body>
+    <h1>exampleeee</h1>
+    <p>hola <strong id="auten"></strong> estas en una paginaaa</p>
+    <a href="" id="salir">salir de la sesion</a>
+<script>
+    function obtenersesion()
+    {
+        var nombre = sessionStorage.getItem("nombre");
+        auten.innerHTML = nombre;
+        return (nombre == null || nombre == undefined)?window.location.href = "index.html" : fase;
+    }
+    salir.onclick = function()
+    {
+        sessionStorage.clear();
+        window.location.href = index.html
+    };
+    window.onload = obtenersesion;
+</script>
+</body>
+</html>
